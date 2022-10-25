@@ -14,6 +14,8 @@ namespace ApiDotnetRobusta.Domain.Context
         {}
 
         public DbSet<Person> people { get; set; }
+        public DbSet<Product> products { get; set; }
+        public DbSet<Purchase> purchases { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

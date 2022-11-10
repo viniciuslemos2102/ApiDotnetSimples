@@ -17,14 +17,14 @@ namespace ApiDotnetRobusta.Domain.Maps
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Id)
-                .HasColumnName("IdProduto")
+                .HasColumnName("Idproduto")
                 .UseIdentityColumn();
 
             builder.Property(x => x.Name)
                 .HasColumnName("Nome");
 
             builder.Property(x => x.CodErp)
-                .HasColumnName("CodErp");
+                .HasColumnName("Coderp");
 
             builder.Property(x => x.Price)
                .HasColumnName("Preco");

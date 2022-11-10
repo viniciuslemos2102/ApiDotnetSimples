@@ -17,26 +17,26 @@ namespace ApiDotnetRobusta.Domain.Entities
         public Product Product { get; set; }
 
 
-        public Purchase( int personId, int prodctId, DateTime? date)
+        public Purchase( int personId, int prodctId)
         {
-            Validation(prodctId, personId, date);
+            Validation(prodctId, personId);
         }
-        public Purchase(int id ,int personId, int prodctId, DateTime? date)
+        public Purchase(int id ,int personId, int prodctId)
         {
             DomainValidationException.When(id < 0, "o id dever ser informado");
             Id = id;
-            Validation(prodctId, personId, date);
+            Validation(prodctId, personId);
         }
-        public void Validation( int personId, int prodctId, DateTime? date)
+        public void Validation(int personId, int prodctId)
         {
-            
+
             DomainValidationException.When(prodctId < 0, "o id do produto dever ser informado");
             DomainValidationException.When(personId < 0, "o id da pessoa dever ser informado");
-            DomainValidationException.When(!date.HasValue, "a data dever ser informado");
+
 
             ProductId = prodctId;
             PersonID = personId;
-            Date = date.Value;
+            Date = DateTime.Now;
         }
     }
 }

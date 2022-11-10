@@ -17,7 +17,7 @@ namespace ApiDotnetRobusta.Domain.Maps
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Id)
-                .HasColumnName("IdPessoa")
+                .HasColumnName("Idpessoa")
                 .UseIdentityColumn();
 
             builder.Property(x => x.Document)

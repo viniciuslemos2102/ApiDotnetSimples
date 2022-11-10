@@ -18,12 +18,14 @@ namespace ApiDotnetRobusta.Domain.Entities
         public Person(string name, string document, string phone)
         {
             Validation(document, name, phone);
+            Purchases = new List<Purchase>();
         }
         public Person(int id,string name,string phone, string document )
         {
             DomainValidationException.When(id <= 0, "id dever ser maior que zero");
             Id = id;
             Validation(document, name, phone);
+            Purchases = new List<Purchase>();
         }
         private void Validation(string document, string phone, string name)
         {

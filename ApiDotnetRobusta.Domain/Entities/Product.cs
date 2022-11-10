@@ -18,12 +18,14 @@ namespace ApiDotnetRobusta.Domain.Entities
         public Product(string name, string coderp, decimal price)
         {
             Validation(name, coderp, price);
+            Purchases = new List<Purchase>();
         }
         public Product(int id,string name, string coderp, decimal price)
         {
             DomainValidationException.When(id < 0, "id do produto dever ser informado");
             Id = id;
             Validation(name, coderp, price);
+            Purchases = new List<Purchase>();
         }
         public void Validation(string name, string coderp, decimal price)
         {

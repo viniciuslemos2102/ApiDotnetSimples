@@ -22,13 +22,13 @@ namespace ApiDotnetRobusta.Domain.Maps
                 .UseIdentityColumn();
 
             builder.Property(p => p.ProductId)
-                .HasColumnName("IdProduto"); 
+                .HasColumnName("Idproduto"); 
             
             builder.Property(p => p.PersonID)
-                .HasColumnName("IdPessoa");
+                .HasColumnName("Idpessoa");
 
             builder.Property(p => p.Date)
-                .HasColumnName("DataCompra");
+                .HasColumnName("Datacompra");
 
             builder.HasOne(x => x.Person)
                 .WithMany(x => x.Purchases);
